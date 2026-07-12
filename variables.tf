@@ -119,11 +119,11 @@ EOT
       resource_group_name = string
       ttl                 = number
       tags                = optional(map(string))
-      record = object({
+      record = list(object({
         flags = number
         tag   = string
         value = string
-      })
+      }))
     })))
     dns_cname_records = optional(map(object({
       name                = string
@@ -138,10 +138,10 @@ EOT
       ttl                 = number
       name                = optional(string) # Default: "@"
       tags                = optional(map(string))
-      record = object({
+      record = list(object({
         exchange   = string
         preference = string
-      })
+      }))
     })))
     dns_ns_records = optional(map(object({
       name                = string
@@ -162,21 +162,21 @@ EOT
       resource_group_name = string
       ttl                 = number
       tags                = optional(map(string))
-      record = object({
+      record = list(object({
         port     = number
         priority = number
         target   = string
         weight   = number
-      })
+      }))
     })))
     dns_txt_records = optional(map(object({
       name                = string
       resource_group_name = string
       ttl                 = number
       tags                = optional(map(string))
-      record = object({
+      record = list(object({
         value = string
-      })
+      }))
     })))
   }))
 
