@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.dns_zones : {
       for k2, v2 in coalesce(v1.dns_a_records, {}) :
       "${k1}/${k2}" => merge(v2, {
-        zone_name = module.dns_zones.dns_zones["${k1}"].name
+        zone_name = module.dns_zones.dns_zones_name["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.dns_zones : {
       for k2, v2 in coalesce(v1.dns_aaaa_records, {}) :
       "${k1}/${k2}" => merge(v2, {
-        zone_name = module.dns_zones.dns_zones["${k1}"].name
+        zone_name = module.dns_zones.dns_zones_name["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.dns_zones : {
       for k2, v2 in coalesce(v1.dns_caa_records, {}) :
       "${k1}/${k2}" => merge(v2, {
-        zone_name = module.dns_zones.dns_zones["${k1}"].name
+        zone_name = module.dns_zones.dns_zones_name["${k1}"]
       })
     }
   ]...)
@@ -32,7 +32,7 @@ locals {
     for k1, v1 in var.dns_zones : {
       for k2, v2 in coalesce(v1.dns_cname_records, {}) :
       "${k1}/${k2}" => merge(v2, {
-        zone_name = module.dns_zones.dns_zones["${k1}"].name
+        zone_name = module.dns_zones.dns_zones_name["${k1}"]
       })
     }
   ]...)
@@ -41,7 +41,7 @@ locals {
     for k1, v1 in var.dns_zones : {
       for k2, v2 in coalesce(v1.dns_mx_records, {}) :
       "${k1}/${k2}" => merge(v2, {
-        zone_name = module.dns_zones.dns_zones["${k1}"].name
+        zone_name = module.dns_zones.dns_zones_name["${k1}"]
       })
     }
   ]...)
@@ -50,7 +50,7 @@ locals {
     for k1, v1 in var.dns_zones : {
       for k2, v2 in coalesce(v1.dns_ns_records, {}) :
       "${k1}/${k2}" => merge(v2, {
-        zone_name = module.dns_zones.dns_zones["${k1}"].name
+        zone_name = module.dns_zones.dns_zones_name["${k1}"]
       })
     }
   ]...)
@@ -59,7 +59,7 @@ locals {
     for k1, v1 in var.dns_zones : {
       for k2, v2 in coalesce(v1.dns_ptr_records, {}) :
       "${k1}/${k2}" => merge(v2, {
-        zone_name = module.dns_zones.dns_zones["${k1}"].name
+        zone_name = module.dns_zones.dns_zones_name["${k1}"]
       })
     }
   ]...)
@@ -68,7 +68,7 @@ locals {
     for k1, v1 in var.dns_zones : {
       for k2, v2 in coalesce(v1.dns_srv_records, {}) :
       "${k1}/${k2}" => merge(v2, {
-        zone_name = module.dns_zones.dns_zones["${k1}"].name
+        zone_name = module.dns_zones.dns_zones_name["${k1}"]
       })
     }
   ]...)
@@ -77,7 +77,7 @@ locals {
     for k1, v1 in var.dns_zones : {
       for k2, v2 in coalesce(v1.dns_txt_records, {}) :
       "${k1}/${k2}" => merge(v2, {
-        zone_name = module.dns_zones.dns_zones["${k1}"].name
+        zone_name = module.dns_zones.dns_zones_name["${k1}"]
       })
     }
   ]...)
